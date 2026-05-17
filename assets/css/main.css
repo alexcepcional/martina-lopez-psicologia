@@ -98,6 +98,10 @@ section,
   .section {
     scroll-margin-top: 66px;
   }
+
+  .nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 /* Header y navegación */
