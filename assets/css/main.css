@@ -99,8 +99,13 @@ section,
     scroll-margin-top: 66px;
   }
 
-  .nav-toggle:focus:not(:focus-visible) {
-    outline: none;
+  .nav-toggle:not(.is-open) span {
+    background-color: var(--nav-color) !important;
+  }
+  
+  .nav-toggle.is-open span,
+  .nav-toggle:not(.is-open):hover span {
+    background-color: var(--nav-hover-color) !important;
   }
 }
 
@@ -298,9 +303,13 @@ section,
     width: 14px;
   }
 
-  .nav-toggle:hover span,
-  .nav-toggle.is-open span {
-    background-color: var(--nav-hover-color);
+  .nav-toggle:not(.is-open) span {
+    background-color: var(--nav-color) !important;
+  }
+
+  .nav-toggle.is-open span,
+  .nav-toggle:not(.is-open):hover span {
+    background-color: var(--nav-hover-color) !important;
   }
 
   .nav-toggle:focus-visible {
@@ -503,29 +512,13 @@ section,
   margin-bottom: 0;
 }
 
-.service-card-individual i {
-  color: #0dcaf0;
-}
+.service-card-individual i { color: #0dcaf0; }
+.service-card-couple i     { color: #fd7e14; }
+.service-card-intro i      { color: #20c997; }
 
-.service-card-couple i {
-  color: #fd7e14;
-}
-
-.service-card-intro i {
-  color: #20c997;
-}
-
-.service-card-individual:hover .service-icon path {
-  fill: #0dcaf0;
-}
-
-.service-card-couple:hover .service-icon path {
-  fill: #fd7e14;
-}
-
-.service-card-intro:hover .service-icon path {
-  fill: #20c997;
-}
+.service-card-individual:hover .service-icon path { fill: #0dcaf0; }
+.service-card-couple:hover .service-icon path     { fill: #fd7e14; }
+.service-card-intro:hover .service-icon path      { fill: #20c997; }
 
 .service-card:hover .service-icon i {
   color: #ffffff;

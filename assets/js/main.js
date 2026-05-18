@@ -24,7 +24,9 @@
   }
 
   function toggleMobileNavigation() {
-    setMobileNavigationState(!nav.classList.contains("is-open"));
+    const isOpen = !nav.classList.contains("is-open");
+    setMobileNavigationState(isOpen);
+    if (!isOpen) setTimeout(() => navToggle.blur(), 0);
   }
 
   function closeMobileNavigation() {
