@@ -98,15 +98,6 @@ section,
   .section {
     scroll-margin-top: 66px;
   }
-
-  .nav-toggle:not(.is-open) span {
-    background-color: var(--nav-color) !important;
-  }
-  
-  .nav-toggle.is-open span,
-  .nav-toggle:not(.is-open):hover span {
-    background-color: var(--nav-hover-color) !important;
-  }
 }
 
 /* Header y navegación */
@@ -303,18 +294,25 @@ section,
     width: 14px;
   }
 
-  .nav-toggle:not(.is-open) span {
-    background-color: var(--nav-color) !important;
-  }
-
-  .nav-toggle.is-open span,
-  .nav-toggle:not(.is-open):hover span {
-    background-color: var(--nav-hover-color) !important;
+  .nav-toggle:hover span,
+  .nav-toggle.is-open span {
+    background-color: var(--nav-hover-color);
   }
 
   .nav-toggle:focus-visible {
     outline: 2px solid var(--nav-hover-color);
     outline-offset: 4px;
+  }
+}
+
+/* En táctiles, el hover no cambia el color del botón */
+@media (hover: none) {
+  .nav-toggle:hover span {
+    background-color: var(--nav-color);
+  }
+
+  .nav-toggle.is-open span {
+    background-color: var(--nav-hover-color);
   }
 }
 

@@ -12,7 +12,6 @@
     if (!header || (!header.classList.contains("sticky-top") && !header.classList.contains("fixed-top"))) {
       return;
     }
-
     body.classList.toggle("scrolled", window.scrollY > 100);
   }
 
@@ -24,9 +23,7 @@
   }
 
   function toggleMobileNavigation() {
-    const isOpen = !nav.classList.contains("is-open");
-    setMobileNavigationState(isOpen);
-    if (!isOpen) setTimeout(() => navToggle.blur(), 0);
+    setMobileNavigationState(!nav.classList.contains("is-open"));
   }
 
   function closeMobileNavigation() {
@@ -37,7 +34,6 @@
 
   function removePreloader() {
     const preloader = document.querySelector("#preloader");
-
     if (preloader) {
       preloader.remove();
     }
@@ -53,7 +49,6 @@
     if (typeof AOS === "undefined") {
       return;
     }
-
     AOS.init({
       duration: 600,
       easing: "ease-in-out",
@@ -66,14 +61,11 @@
     if (typeof Swiper === "undefined") {
       return;
     }
-
     document.querySelectorAll(".init-swiper").forEach((swiperElement) => {
       const configElement = swiperElement.querySelector(".swiper-config");
-
       if (!configElement) {
         return;
       }
-
       const config = JSON.parse(configElement.textContent.trim());
       new Swiper(swiperElement, config);
     });
@@ -83,16 +75,12 @@
     if (!window.location.hash) {
       return;
     }
-
     const section = document.querySelector(window.location.hash);
-
     if (!section) {
       return;
     }
-
     setTimeout(() => {
       const scrollMarginTop = parseInt(getComputedStyle(section).scrollMarginTop, 10);
-
       window.scrollTo({
         top: section.offsetTop - scrollMarginTop,
         behavior: "smooth",
@@ -102,18 +90,14 @@
 
   function updateActiveNavLink() {
     const position = window.scrollY + 200;
-
     navLinks.forEach((link) => {
       if (!link.hash) {
         return;
       }
-
       const section = document.querySelector(link.hash);
-
       if (!section) {
         return;
       }
-
       const isActive = position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight;
       link.classList.toggle("active", isActive);
     });
