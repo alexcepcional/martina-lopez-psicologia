@@ -968,4 +968,9 @@ section,
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+
+  .site-footer-inner p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
